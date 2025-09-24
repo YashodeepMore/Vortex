@@ -39,23 +39,8 @@ def predict():
     }
     """
 
-    # data = request.get_json()
-    data ={
-        "LAT": 18.0,
-        "LON": 75.0,
-        "YEAR_MONTH": "2025-04",
-        "features": {
-            "DOY": 120,
-            "soil_moisture": 0.45,
-            "Humidity": 65,
-            "T2M": 27.0,
-            "PRECTOTCORR": 1.2,
-            "soil_moisture_7d": 0.45,
-            "temp_7d": 26.7,
-            "rain_7d": 12.4
-        }
-    }
-
+    data = request.get_json()
+    
     lat = data["LAT"]
     lon = data["LON"]
     chosen_month = data["YEAR_MONTH"]
