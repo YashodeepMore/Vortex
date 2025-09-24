@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from weather import WeatherForecaster
 from static_models import SeasonClassifier, IrrigationRegressor  # file name fixed
+from flask_cors import CORS
 
 # ----------------------------
 # 1. Load models once
@@ -17,6 +18,7 @@ irrigation_model = IrrigationRegressor("irrigation_regressor.pkl")
 # 2. Create Flask app
 # ----------------------------
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/predict", methods=["GET", "POST"])
 def predict():
